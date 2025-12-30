@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: black;
+  color: #eee;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+}
+
+.hidden { display: none; }
+
+/* COUNTDOWN */
+#countdown {
+  font-size: 5rem;
+}
+
+/* ROCKET */
+#rocket {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  opacity: 0;
+}
+
+/* TEXT */
+#text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+/* LIGHTS */
+#lights {
+  font-size: 3rem;
+  letter-spacing: 10px;
+}
+
+.light {
+  opacity: 0.2;
+  color: #444;
+  transition: 1.5s;
+}
+
+.light.on {
+  opacity: 1;
+  color: #ffd966;
+  text-shadow: 0 0 20px #ffd966;
+}
+
+.gap {
+  margin-right: 20px;
+}
+
+/* ENVELOPE */
+#envelope {
+  width: 180px;
+  height: 120px;
+  position: relative;
+  cursor: pointer;
+}
+
+.body {
+  background: #ccc;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #999;
+}
+
+.flap {
+  background: #bbb;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  transform-origin: top;
+  transition: 1s;
+}
+
+#envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.hint {
+  margin-top: 10px;
+  opacity: 0.6;
+}
+
+/* LETTER */
+#letter {
+  background: #f4f1ea;
+  color: #222;
+  padding: 22px;
+  font-size: 1rem;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+/* YES NO */
+#choice button {
+  margin: 10px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  min-width: 100px;
+  border: 1px solid #aa3333;
+  background: transparent;
+  color: #aa3333;
+  cursor: pointer;
+}
+
+/* UPSIDE DOWN */
+body.upside {
+  background: #120000;
+}
+
+body.upside #letter {
+  background: #1a0a0a;
+  color: #eee;
+}
+
+/* REPLY */
+#reply textarea {
+  width: 100%;
+  height: 100px;
+  background: black;
+  color: #eee;
+  border: 1px solid #555;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  #countdown { font-size: 4rem; }
+  #lights { font-size: 2.2rem; letter-spacing: 6px; }
+  #rocket { font-size: 2.5rem; }
+}
